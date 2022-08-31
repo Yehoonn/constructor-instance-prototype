@@ -1,12 +1,19 @@
 {
   "name": "22.08.31---constructor",
   "version": "1.0.0",
-  "description": "'생성자 함수'",
-  "main": "constructor.js",
+  "description": "",
+  "main": "coding-test-practice.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yehoonn/constructor-instance-prototype.git"
+  },
   "author": "",
-  "license": "MIT",
-  "type": "module"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yehoonn/constructor-instance-prototype/issues"
+  },
+  "homepage": "https://github.com/Yehoonn/constructor-instance-prototype#readme"
 }

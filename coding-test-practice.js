@@ -1,4 +1,7 @@
-// 랜덤으로 숫자를 구한다, 매개변수는 랜덤 숫자의 최대값, 랜덤으로 돌릴 숫자의 개수이다
+/**
+ * @function  랜덤으로 숫자를 구한다 매개변수 -> (랜덤 숫자의 최대값, 랜덤으로 돌릴 숫자의 개수)
+ * */
+
 function randomNumber(random, count) {
   this.number = [];
   for (let i = 0; i < count; i++) {
@@ -11,19 +14,23 @@ function randomNumber(random, count) {
   }
 }
 
-let newRandom = new randomNumber(20, 3);
+/**
+ * @function 모든 숫자를 더한 값을 3으로 나누고 10미만이라면 under 이상이라면 over를 출력한다 매개변수 -> (배열)
+ * */
 
-// 모든 숫자를 더한 값을 3으로 나누고 10미만이라면 under 이상이라면 over를 출력한다
 function numberResult(array) {
   let result = 0;
   for (let key of array) {
     result += key;
   }
 
-  result / array.length >= 10 ? console.log("over") : console.log("under");
+  return result / array.length >= 10 ? "over" : "under";
 }
 
-// random 숫자가 있는 배열을 토대로 새로운 객체를 생성, first, second, third라는 key에 배열의 값을 넣어준다
+/**
+ * @function random 숫자가 있는 배열을 토대로 새로운 객체를 생성, first, second, third라는 key에 배열의 값을 넣어준다 매개변수 -> (배열)
+ * */
+
 function objectDataCreate(array) {
   let count = 0;
   for (let key of array) {
@@ -39,7 +46,10 @@ function objectDataCreate(array) {
   }
 }
 
-// first, second, third 숫자 중 중간 값을 찾아주는 함수
+/**
+ * @function first, second, third 숫자 중 중간 값을 찾아주는 함수
+ * */
+
 function middleValueSearch(object) {
   if (object.first > object.second && object.third < object.second) {
     return object.second;
@@ -56,7 +66,12 @@ function middleValueSearch(object) {
   }
 }
 
+/**
+ * @function 요구사항들을 출력시켜주는 함수
+ */
+
 function answerQuiz() {
+  let newRandom = new randomNumber(20, 3);
   let objectData = new objectDataCreate(newRandom.number);
   let middleData = middleValueSearch(objectData);
 
@@ -64,9 +79,16 @@ function answerQuiz() {
   console.log(newRandom);
   console.log(`배열을 토대로 만든 객체는 ↓`);
   console.log(objectData);
+  console.log(`랜덤 숫자의 평균 값은 : ${numberResult(newRandom.number)}`);
   console.log(
     `객체의 값을 분석한 결과 중간 값에 해당하는 숫자는 : ${middleData}`
   );
 }
 
-answerQuiz();
+function person() {}
+
+person.prototype.answerQuiz = answerQuiz();
+
+let jack = new person();
+
+jack.answerQuiz;
