@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Yehoonn/constructor-instance-prototype/issues"
   },
-  "homepage": "https://github.com/Yehoonn/constructor-instance-prototype#readme"
+  "homepage": "https://github.com/Yehoonn/constructor-instance-prototype#readme",
+  "type": "module"
 }

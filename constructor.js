@@ -40,7 +40,7 @@ let userObject = { user: [] };
 function createUser() {
   for (let key in userObject) {
     for (let value of studentList) {
-      let number = Math.floor(Math.random() * 35);
+      let number = Math.floor(Math.random() * 35) + 1;
       userObject[key].push(new kdt(i, value, number, "undefined", "undefined"));
       i++;
     }
@@ -49,6 +49,10 @@ function createUser() {
   for (let key of userObject.user) {
     if (key.id % 2 === 1) {
       key.address = "대전";
+      key.tel = "없음";
+    } else {
+      key.address = "지구 어딘가";
+      key.tel = "없음";
     }
   }
   kdt.prototype.hello = function () {
@@ -60,6 +64,6 @@ createUser();
 
 let filter = userObject.user.filter((elm) => elm.address === "대전");
 
-console.log(filter);
+console.table(userObject.user);
 console.log(userObject.user[0].hello());
 console.log(userObject.user[1].hello());

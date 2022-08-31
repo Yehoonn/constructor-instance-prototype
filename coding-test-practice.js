@@ -35,7 +35,7 @@ function objectDataCreate(array) {
   let count = 0;
   for (let key of array) {
     if (count === 0) {
-      this.first = key;
+      this.count$ = key;
       count++;
     } else if (count === 1) {
       this.second = key;
@@ -76,9 +76,9 @@ function answerQuiz() {
   let middleData = middleValueSearch(objectData);
 
   console.log(`랜덤으로 돌린 숫자의 배열은 ↓`);
-  console.log(newRandom);
+  console.table(newRandom);
   console.log(`배열을 토대로 만든 객체는 ↓`);
-  console.log(objectData);
+  console.table(objectData);
   console.log(`랜덤 숫자의 평균 값은 : ${numberResult(newRandom.number)}`);
   console.log(
     `객체의 값을 분석한 결과 중간 값에 해당하는 숫자는 : ${middleData}`
@@ -92,3 +92,27 @@ person.prototype.answerQuiz = answerQuiz();
 let jack = new person();
 
 jack.answerQuiz;
+
+// let promise = new Promise((resolve) => resolve("A"));
+// {
+// }
+
+// promise
+//   .then((elem) => {
+//     console.log(elem);
+//     return "B";
+//   })
+//   .then((elem) => {
+//     setTimeout(() => {
+//       console.log(elem);
+//     }, 1000);
+//   })
+//   .then(() => {
+//     console.log("D");
+//     return "C";
+//   })
+//   .then((elem) => {
+//     setTimeout(() => {
+//       console.log(elem);
+//     }, 2000);
+//   });
