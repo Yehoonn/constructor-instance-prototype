@@ -6,8 +6,7 @@ function randomNumber(random, count) {
     if (this.number.indexOf(number) === -1) {
       this.number.push(number);
     } else {
-      number = number + 2;
-      this.number.push(number);
+      i--;
     }
   }
 }
